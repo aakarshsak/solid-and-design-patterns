@@ -296,4 +296,4 @@ Creational patterns focus primarily on **object creation mechanisms**, i.e., the
 
 ### Singleton Design Pattern
 
-Singleton notes can be added here later as needed.
+Singleton notes can be added.
