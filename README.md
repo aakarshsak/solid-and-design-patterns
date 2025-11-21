@@ -123,6 +123,16 @@ Creational patterns focus primarily on **object creation mechanisms**, i.e., the
 - Can be used when **which subclass to create is not known** in advance
 - When a **subclass should specify** which object is to be created
 
+#### Visual Representation
+
+**Before applying Factory Pattern:**
+
+![Before Factory Pattern](images/before-factory.png)
+
+**After applying Factory Pattern:**
+
+![After Factory Pattern](images/after-factory.png)
+
 #### Summary
 
 - The Factory design pattern is a **creational design pattern** that provides an **interface for producing objects in a superclass** while allowing **subclasses to choose** the type of objects created
@@ -184,6 +194,16 @@ Creational patterns focus primarily on **object creation mechanisms**, i.e., the
 
 - Construct a **complex object** from simple objects using a **step-by-step approach**
 
+#### Visual Representation
+
+**Before applying Builder Pattern:**
+
+![Before Builder Pattern](images/before-builder.png)
+
+**After applying Builder Pattern:**
+
+![After Builder Pattern](images/after-builder.png)
+
 #### Summary
 
 - Builder is a design pattern that allows you to **build complicated objects in stages**
@@ -233,6 +253,16 @@ Creational patterns focus primarily on **object creation mechanisms**, i.e., the
 - When classes have to be **instantiated at runtime**
 - When it is **expensive and complex to create an object**
 - When the client **should not be aware** of how the object is created and represented
+
+#### Visual Representation
+
+**Before applying Prototype Pattern:**
+
+![Before Prototype Pattern](images/before-prototype.png)
+
+**After applying Prototype Pattern:**
+
+![After Prototype Pattern](images/after-prototype.png)
 
 #### Summary
 
