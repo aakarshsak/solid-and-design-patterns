@@ -310,4 +310,57 @@ Creational patterns focus primarily on **object creation mechanisms**, i.e., the
 
 ### Singleton Design Pattern
 
-Singleton notes can be added.
+#### GoF Definition
+
+> Ensure a class only has one instance and provide a global point of access to it.
+
+#### Intent
+
+Only if **all three** of the following criteria are met should Singleton be considered:
+
+- It is **impossible to give reasonable ownership** to a single instance.
+- It’s preferable to use a **lazy initialization** method.
+- Otherwise, there is **no provision for global access**.
+
+More generally, the intent is to:
+
+- Make sure a class **only has one instance**.
+- Provide that instance with a **global access point**.
+- Encapsulate **just‑in‑time initialization** (initialization on first usage).
+
+#### Advantages
+
+- **Memory and cost are saved** because the object is not created repeatedly for each request.
+- A **single instance is reused**, avoiding duplicate expensive setup.
+
+#### Uses
+
+- Commonly used in **database applications** or **multi‑threaded applications**.
+- Examples: **thread pools**, **caching**, **logging**, configuration managers, etc.
+
+#### Visual Representation
+
+**After applying Singleton Pattern:**
+
+![After Singleton Pattern](images/after-singleton.png)
+
+#### Summary
+
+- The Singleton design pattern ensures that a class has **only one instance** while also giving a **global access point** to that instance.
+- To prevent other objects from using the `new` operator with the Singleton class, **make the default constructor private**.
+- A real‑world analogy is a **government**: there is only one official government in a country, and the name “The Government of X” acts as a **global access point**, regardless of the individuals in office.
+
+#### When to Use the Singleton Pattern
+
+- When a class in your software should have **exactly one instance** available to all clients  
+  (for example, a single database object shared by all components).
+- When you require **tighter control over global variables**, and want their lifecycle and access centralized.
+
+> Note: one of the challenges of Singleton is that it can **violate the Single Responsibility Principle (SRP)**,  
+> because the class is now responsible for both its **primary behavior** and **managing its sole instance**.
+
+#### Files in This Repo
+
+- **Singleton Design Pattern**
+  - [Database.java](creational/Single%20Design%20Pattern/Database.java)
+  - [DatabaseSingletonDemo.java](creational/Single%20Design%20Pattern/DatabaseSingletonDemo.java)
