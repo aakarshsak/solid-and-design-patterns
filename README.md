@@ -11,6 +11,8 @@
   - [Builder Design Pattern](#builder-design-pattern)
   - [Prototype Design Pattern](#prototype-design-pattern)
   - [Singleton Design Pattern](#singleton-design-pattern)
+- [Structural Design Patterns](#structural-design-patterns)
+  - [Adapter Design Pattern](#adapter-design-pattern)
 
 ## Introduction to Design Patterns
 
@@ -364,3 +366,80 @@ More generally, the intent is to:
 - **Singleton Design Pattern**
   - [Database.java](creational/Single%20Design%20Pattern/Database.java)
   - [DatabaseSingletonDemo.java](creational/Single%20Design%20Pattern/DatabaseSingletonDemo.java)
+
+## Structural Design Patterns
+
+Structural design patterns focus on the **organisation of classes and objects into larger units**.
+
+### Types of Structural Patterns
+
+- **Adapter Design Pattern**
+- **Bridge Design Pattern**
+- **Composite Design Pattern**
+- **Proxy Design Pattern**
+- **Facade Design Pattern**
+- **Decorator Design Pattern**
+
+### Adapter Design Pattern
+
+#### GoF Definition
+
+> Convert the interface of a class into another interface clients expect.  
+> Adapter lets classes work together that couldn’t otherwise because of incompatible interfaces.
+
+#### Intent
+
+- Convert a class’s **interface** to the interface that **clients expect**.
+- Allow classes that couldn’t operate together earlier due to **mismatched interfaces** to now work together with the help of an adapter.
+- Wrap an **existing class** with a **new interface**.
+- “Match the resistance” of an old component to a **new system**.
+
+#### Advantages
+
+- **Incompatible classes can communicate** with each other.
+- **Existing functionality can be reused** without modifying existing classes.
+
+#### Uses
+
+- When an **incompatible interface must be used**.
+- When **reusable classes** must be created that work with classes having incompatible interfaces.
+
+#### Visual Representation
+
+**Before applying Adapter Pattern:**
+
+![Before Adapter Pattern](images/before-adapter.png)
+
+**After applying Adapter Pattern:**
+
+![After Adapter Pattern](images/after-adapter.png)
+
+#### Summary
+
+- The Adapter design pattern is a **structural design pattern** that allows **objects with mismatched interfaces to work together**.
+- An Adapter is a **special object** that changes an object's interface so it can be understood by another object.
+- Adapters can both **mediate communication** between objects with different interfaces and **translate data** into different representations.
+
+#### When to Use the Adapter Pattern
+
+- When you wish to **use an existing class** but its interface is **not consistent** with the rest of your code.
+- When you want to **reuse many existing subclasses** that lack some common functionality that cannot be added to the superclass.
+- Clients should depend only on the **client-facing interface** and use the Adapter through that,  
+  so you can **change or extend Adapters** without touching client code.
+
+#### Files in This Repo
+
+- **BAD**
+  - [AdapterDemo.java](structural/Adapter%20Design%20Pattern/bad/AdapterDemo.java)
+  - [CreditCard.java](structural/Adapter%20Design%20Pattern/bad/CreditCard.java)
+  - [CreditCardClient.java](structural/Adapter%20Design%20Pattern/bad/CreditCardClient.java)
+  - [CreditCardDB.java](structural/Adapter%20Design%20Pattern/bad/CreditCardDB.java)
+  - [CreditCardLegacy.java](structural/Adapter%20Design%20Pattern/bad/CreditCardLegacy.java)
+
+- **GOOD**
+  - [AdapterDemo.java](structural/Adapter%20Design%20Pattern/good/AdapterDemo.java)
+  - [CreditCard.java](structural/Adapter%20Design%20Pattern/good/CreditCard.java)
+  - [CreditCardClient.java](structural/Adapter%20Design%20Pattern/good/CreditCardClient.java)
+  - [CreditCardDB.java](structural/Adapter%20Design%20Pattern/good/CreditCardDB.java)
+  - [CreditCardLegacy.java](structural/Adapter%20Design%20Pattern/good/CreditCardLegacy.java)
+  - [LegacyCreditCardAdapter.java](structural/Adapter%20Design%20Pattern/good/LegacyCreditCardAdapter.java)
