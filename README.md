@@ -13,6 +13,7 @@
   - [Singleton Design Pattern](#singleton-design-pattern)
 - [Structural Design Patterns](#structural-design-patterns)
   - [Adapter Design Pattern](#adapter-design-pattern)
+  - [Bridge Design Pattern](#bridge-design-pattern)
 
 ## Introduction to Design Patterns
 
@@ -443,3 +444,72 @@ Structural design patterns focus on the **organisation of classes and objects in
   - [CreditCardDB.java](structural/Adapter%20Design%20Pattern/good/CreditCardDB.java)
   - [CreditCardLegacy.java](structural/Adapter%20Design%20Pattern/good/CreditCardLegacy.java)
   - [LegacyCreditCardAdapter.java](structural/Adapter%20Design%20Pattern/good/LegacyCreditCardAdapter.java)
+
+### Bridge Design Pattern
+
+#### GoF Definition
+
+> Decouple an abstraction from its implementation so that the two can vary independently.
+
+#### Intent
+
+- Separate an **abstraction** from its **implementation** so that they can be **changed independently**.
+- Keep the implementation buried in its own **inheritance hierarchy**, while exposing the abstraction/interface in a **separate hierarchy**.
+- Provide an extra level of **insulation** between abstraction and implementation (a step beyond simple encapsulation).
+
+#### Advantages
+
+- The **implementation is separated** from the class interface.
+- Adds **extensibility** – you can introduce new abstractions and implementations independently.
+- Clients **do not need to know** how the class is implemented.
+
+#### Uses
+
+- When the **client should not be affected** by changes made in the implementation of a class.
+!- When **implementation and abstraction** both need to be **extended independently**.
+
+#### Visual Representation
+
+**Before applying Bridge Pattern:**
+
+![Before Bridge Pattern](images/before-bridge.png)
+
+**After applying Bridge Pattern:**
+
+![After Bridge Pattern](images/after-bridge.png)
+
+#### Summary
+
+- Bridge is a **structural design pattern** that lets you split a large class or a group of closely related classes into **two separate hierarchies**:  
+  one for **abstractions** and another for **implementations**, which can be developed independently.
+- The abstraction acts as a **high‑level control layer**; it doesn’t do the work itself, but delegates to the implementation layer (also called the **platform**).
+- In a monolithic codebase, even a small change can be risky because it requires understanding the entire system.  
+  With Bridge, it’s easier to change smaller, **well‑defined modules** without impacting others.
+
+#### When to Use the Bridge Pattern
+
+- When you want to **separate and organise a monolithic class** that has many variants of some functionality  
+  (for example, when a class can work with various database servers, operating systems, or devices).
+- When you need to **extend a class in several orthogonal (independent) dimensions** – e.g., different platforms × different features.
+- When you might need to **swap implementations at runtime or mid‑project** without changing the client‑side abstraction.
+
+#### Files in This Repo
+
+- **BAD**
+  - [Bit.java](structural/Bridge%20Design%20Pattern/bad/Bit.java)
+  - [Bit32.java](structural/Bridge%20Design%20Pattern/bad/Bit32.java)
+  - [Bit64.java](structural/Bridge%20Design%20Pattern/bad/Bit64.java)
+  - [Deployment.java](structural/Bridge%20Design%20Pattern/bad/Deployment.java)
+  - [LinuxBit32.java](structural/Bridge%20Design%20Pattern/bad/LinuxBit32.java)
+  - [LinuxBit64.java](structural/Bridge%20Design%20Pattern/bad/LinuxBit64.java)
+  - [LinuxDeployment.java](structural/Bridge%20Design%20Pattern/bad/LinuxDeployment.java)
+  - [MacDeployment.java](structural/Bridge%20Design%20Pattern/bad/MacDeployment.java)
+
+- **GOOD**
+  - [Bit.java](structural/Bridge%20Design%20Pattern/good/Bit.java)
+  - [Bit32.java](structural/Bridge%20Design%20Pattern/good/Bit32.java)
+  - [Bit64.java](structural/Bridge%20Design%20Pattern/good/Bit64.java)
+  - [BridgeDemo.java](structural/Bridge%20Design%20Pattern/good/BridgeDemo.java)
+  - [Deployment.java](structural/Bridge%20Design%20Pattern/good/Deployment.java)
+  - [LinuxDeployment.java](structural/Bridge%20Design%20Pattern/good/LinuxDeployment.java)
+  - [MacDeployment.java](structural/Bridge%20Design%20Pattern/good/MacDeployment.java)
