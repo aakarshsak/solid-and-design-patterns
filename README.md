@@ -14,6 +14,8 @@
 - [Structural Design Patterns](#structural-design-patterns)
   - [Adapter Design Pattern](#adapter-design-pattern)
   - [Bridge Design Pattern](#bridge-design-pattern)
+  - [Composite Design Pattern](#composite-design-pattern)
+  - [Facade Design Pattern](#facade-design-pattern)
 
 ## Introduction to Design Patterns
 
@@ -513,3 +515,113 @@ Structural design patterns focus on the **organisation of classes and objects in
   - [Deployment.java](structural/Bridge%20Design%20Pattern/good/Deployment.java)
   - [LinuxDeployment.java](structural/Bridge%20Design%20Pattern/good/LinuxDeployment.java)
   - [MacDeployment.java](structural/Bridge%20Design%20Pattern/good/MacDeployment.java)
+
+### Composite Design Pattern
+
+#### GoF Definition
+
+> Compose objects into tree structures to represent part‑whole hierarchies.  
+> Composite lets clients treat individual objects and compositions of objects uniformly.
+
+#### Intent
+
+- Compose objects into **tree structures** to depict **whole‑part hierarchies**.
+- Allow clients to **treat individual objects and combinations of objects uniformly**.
+- Support **recursive composition** – for example, “each of the entries in a directory might be a directory.”
+- Prefer a “**has‑a**” relationship over “is‑a” when modelling 1‑to‑many object compositions.
+
+#### Advantages
+
+- Clearly defines a **hierarchy of classes/objects**.
+>- New objects (leaves or composites) can be **added easily**.
+- The overall structure becomes **flexible and easy to manage** via common interfaces.
+
+#### Uses
+
+- When a **class hierarchy or part‑whole structure** needs to be modelled.
+- When **additional responsibilities** should be added at runtime without disturbing existing functionality.
+
+#### Visual Representation
+
+**After applying Composite Pattern:**
+
+![After Composite Pattern](images/after-composite.png)
+
+#### Summary
+
+- Composite is a **structural design pattern** that lets you group elements into **tree structures** and work with them as if they were **individual objects**.
+- Client code **doesn’t need to know** whether it is operating on a simple leaf or an entire composite;  
+  using a shared interface, it can **treat them all the same**.
+- When a method is called on a composite, the request is **delegated down the tree** by the objects themselves.
+
+#### When to Use the Composite Pattern
+
+- When you need to create a **tree‑like object structure** (for example, file systems, menus, UI components, or organization charts).
+- When you want client code to **treat both simple and complex objects uniformly**, using the same operations.
+
+#### Files in This Repo
+
+- **Company directory example**
+  - [Analyst.java](structural/Composite%20Design%20Pattern/companydirectory/Analyst.java)
+  - [CompositeDemo.java](structural/Composite%20Design%20Pattern/companydirectory/CompositeDemo.java)
+  - [Employee.java](structural/Composite%20Design%20Pattern/companydirectory/Employee.java)
+  - [Manager.java](structural/Composite%20Design%20Pattern/companydirectory/Manager.java)
+
+- **Tree example**
+  - [CompositeDemo.java](structural/Composite%20Design%20Pattern/tree/CompositeDemo.java)
+  - [Tree.java](structural/Composite%20Design%20Pattern/tree/Tree.java)
+  - [TreeComponent.java](structural/Composite%20Design%20Pattern/tree/TreeComponent.java)
+  - [TreeNode.java](structural/Composite%20Design%20Pattern/tree/TreeNode.java)
+
+### Facade Design Pattern
+
+#### GoF Definition
+
+> Provide a unified interface to a set of interfaces in a subsystem.  
+> Facade defines a higher‑level interface that makes the subsystem easier to use.
+
+#### Intent
+
+- Provide a **uniform interface** to a group of subsystem interfaces.
+- Introduce a **higher‑level interface** (the Facade) that makes a complex subsystem **easier to use**.
+- Wrap a **complex subsystem** behind a more **user‑friendly interface**.
+
+#### Advantages
+
+- **Hides the complexities** of subsystem components from clients.
+- Enhances **loose coupling** between clients and inner components.
+
+#### Uses
+
+- When you want to expose a **simple interface** for a **complex system**.
+
+#### Visual Representation
+
+**Before applying Facade Pattern:**
+
+![Before Facade Pattern](images/before-facade.png)
+
+**After applying Facade Pattern:**
+
+![After Facade Pattern](images/after-facade.png)
+
+#### Summary
+
+- Facade is a **structural design pattern** that **simplifies the interface** to a library, framework, or any other complex set of classes.
+- A Facade is a **single class** that provides a straightforward interface to a complicated subsystem with many moving parts.  
+  It may offer **limited capabilities** compared to using the subsystem directly, but it focuses on the features that clients **actually need**.
+
+#### When to Use the Facade Pattern
+
+- When you require a **simple but limited interface** to a complicated subsystem.
+- When you want to **divide a subsystem into layers** and provide **entry points** to each level via different facades.
+- By requiring various subsystems to **communicate only through Facades**, you can **reduce entanglement** and improve modularity.
+
+#### Files in This Repo
+
+- **BAD**
+  - [WithoutFacadeDemo.java](structural/Facade%20Design%20Pattern/bad/WithoutFacadeDemo.java)
+
+- **GOOD**
+  - [DatabaseServiceFacade.java](structural/Facade%20Design%20Pattern/good/DatabaseServiceFacade.java)
+  - [FacadeDemo.java](structural/Facade%20Design%20Pattern/good/FacadeDemo.java)
