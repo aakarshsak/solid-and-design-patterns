@@ -16,6 +16,7 @@
   - [Bridge Design Pattern](#bridge-design-pattern)
   - [Composite Design Pattern](#composite-design-pattern)
   - [Facade Design Pattern](#facade-design-pattern)
+  - [Proxy Design Pattern](#proxy-design-pattern)
 
 ## Introduction to Design Patterns
 
@@ -625,3 +626,60 @@ Structural design patterns focus on the **organisation of classes and objects in
 - **GOOD**
   - [DatabaseServiceFacade.java](structural/Facade%20Design%20Pattern/good/DatabaseServiceFacade.java)
   - [FacadeDemo.java](structural/Facade%20Design%20Pattern/good/FacadeDemo.java)
+
+### Proxy Design Pattern
+
+#### GoF Definition
+
+> Provide a surrogate or placeholder for another object to control access to it.
+
+#### Intent
+
+- Create a **surrogate or placeholder** for another object in order to **control access** to it.
+- Add an extra layer of **indirection** to support **distributed, regulated, or intelligent access**.
+- Use **wrapper + delegation** to shield the real component from unnecessary complexity.
+
+#### Advantages
+
+- The **original object is protected** and insulated from direct access by external clients.
+
+#### Uses
+
+- Typical examples:
+  - Checking if an object is **locked** or not without accessing it directly.
+  - Providing a local interface that **accesses remote resources** (remote proxy).
+  - Acting as an **access‑control proxy** (for example, blocking Internet access in an office or to certain websites).
+
+#### Visual Representation
+
+**Before applying Proxy Pattern:**
+
+![Before Proxy Pattern](images/before-proxy.png)
+
+**After applying Proxy Pattern:**
+
+![After Proxy Pattern](images/after-proxy.png)
+
+#### Summary
+
+- Proxy is a **structural design pattern** that allows you to use another object as a **substitute or placeholder**.
+- A Proxy **manages access** to the real object, allowing you to perform work **before or after** the request reaches the real object.
+- When you need to run extra logic around a class’s primary behavior (logging, caching, access control, lazy init), Proxy lets you do this **without modifying the original class**, as it implements the **same interface**.
+
+#### When to Use the Proxy Pattern
+
+- **Virtual Proxy** – when you have a **heavyweight service object** that should be **lazily initialized** because it’s expensive and used only occasionally.
+- **Remote Proxy** – when the service object lives on a **remote server**, and you need a local representative to communicate with it.
+- **Logging Proxy** – when you want to **log or audit requests** before they reach the service object.
+- **Caching Proxy** – when you need to **cache results** of expensive operations and manage the cache’s lifecycle, especially when data is large or expensive to compute.
+
+#### Files in This Repo
+
+- **BAD**
+  - [PayrollDemo.java](structural/Proxy%20Design%20Pattern/bad/PayrollDemo.java)
+  - [PayrollService.java](structural/Proxy%20Design%20Pattern/bad/PayrollService.java)
+
+- **GOOD**
+  - [ProxyDemo.java](structural/Proxy%20Design%20Pattern/good/ProxyDemo.java)
+  - [PayrollService.java](structural/Proxy%20Design%20Pattern/good/PayrollService.java)
+  - [ProxyPayrollService.java](structural/Proxy%20Design%20Pattern/good/ProxyPayrollService.java)
