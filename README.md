@@ -17,6 +17,7 @@
   - [Composite Design Pattern](#composite-design-pattern)
   - [Facade Design Pattern](#facade-design-pattern)
   - [Proxy Design Pattern](#proxy-design-pattern)
+  - [Decorator Design Pattern](#decorator-design-pattern)
 
 ## Introduction to Design Patterns
 
@@ -683,3 +684,65 @@ Structural design patterns focus on the **organisation of classes and objects in
   - [ProxyDemo.java](structural/Proxy%20Design%20Pattern/good/ProxyDemo.java)
   - [PayrollService.java](structural/Proxy%20Design%20Pattern/good/PayrollService.java)
   - [ProxyPayrollService.java](structural/Proxy%20Design%20Pattern/good/ProxyPayrollService.java)
+
+### Decorator Design Pattern
+
+#### GoF Definition
+
+> Attach additional responsibilities to an object dynamically.  
+> Decorators provide a flexible alternative to subclassing for extending functionality.
+
+#### Intent
+
+- Dynamically assign **additional responsibilities** to an object at runtime.
+- Provide a **flexible alternative to subclassing** for extending functionality.
+- Recursively **wrap a core object** to add client‑specified adornments, much like wrapping a present, placing it in a box, and then wrapping the box.
+
+#### Advantages
+
+- Often **better than static inheritance** for adding features.
+- Provides **flexibility** and improves **extensibility**.
+- Simplifies adding **new, optional functionalities** without modifying existing classes.
+
+#### Uses
+
+- When functionalities need to be **added transparently and dynamically** to objects.
+- When **sub‑classing is not practical** or would lead to an explosion of subclasses.
+
+#### Visual Representation
+
+**Before applying Decorator Pattern:**
+
+![Before Decorator Pattern](images/before-decorator.png)
+
+**After applying Decorator Pattern:**
+
+![After Decorator Pattern](images/after-decorator.png)
+
+#### Summary
+
+- Decorator is a **structural design pattern** that lets you **attach additional behaviours** to objects by enclosing them in **wrapper objects** that contain those behaviours.
+- The pattern is also known as **"Wrapper"**, because the wrapper implements the **same interface** as the wrapped object and **delegates all requests** to it, optionally adding extra work.
+- Since decorators follow the same interface, you can **wrap an object in multiple decorators** and the object will gain the **combined behaviour** of all wrappers.
+
+#### When to Use the Decorator Pattern
+
+- When you need to **add extra behaviours to objects at runtime** without disturbing the code that uses them.
+- When it's **inconvenient or impossible to extend behaviour using inheritance** (for example, when classes are closed for modification or when many combinations of behaviour are needed).
+
+#### Files in This Repo
+
+- **BAD**
+  - [Fly.java](structural/Decorator%20Design%20Pattern/bad/Fly.java)
+  - [GenericHero.java](structural/Decorator%20Design%20Pattern/bad/GenericHero.java)
+  - [Hero.java](structural/Decorator%20Design%20Pattern/bad/Hero.java)
+  - [HeroDemo.java](structural/Decorator%20Design%20Pattern/bad/HeroDemo.java)
+  - [SuperPower.java](structural/Decorator%20Design%20Pattern/bad/SuperPower.java)
+
+- **GOOD**
+  - [CanFly.java](structural/Decorator%20Design%20Pattern/good/CanFly.java)
+  - [GenericHero.java](structural/Decorator%20Design%20Pattern/good/GenericHero.java)
+  - [Hero.java](structural/Decorator%20Design%20Pattern/good/Hero.java)
+  - [HeroDemo.java](structural/Decorator%20Design%20Pattern/good/HeroDemo.java)
+  - [WithLaserSight.java](structural/Decorator%20Design%20Pattern/good/WithLaserSight.java)
+  - [WithSuperStrength.java](structural/Decorator%20Design%20Pattern/good/WithSuperStrength.java)
