@@ -18,6 +18,8 @@
   - [Facade Design Pattern](#facade-design-pattern)
   - [Proxy Design Pattern](#proxy-design-pattern)
   - [Decorator Design Pattern](#decorator-design-pattern)
+- [Behavioral Design Patterns](#behavioral-design-patterns)
+  - [Chain of Responsibility Design Pattern](#chain-of-responsibility-design-pattern)
 
 ## Introduction to Design Patterns
 
@@ -746,3 +748,80 @@ Structural design patterns focus on the **organisation of classes and objects in
   - [HeroDemo.java](structural/Decorator%20Design%20Pattern/good/HeroDemo.java)
   - [WithLaserSight.java](structural/Decorator%20Design%20Pattern/good/WithLaserSight.java)
   - [WithSuperStrength.java](structural/Decorator%20Design%20Pattern/good/WithSuperStrength.java)
+
+## Behavioral Design Patterns
+
+Behavioral design patterns focus on **object communication mechanisms** – how objects interact, share responsibilities, and pass data or requests among each other.
+
+### Types of Behavioral Patterns
+
+- **Chain of Responsibility Design Pattern**
+- **Mediator Design Pattern**
+- **Observer Design Pattern**
+
+### Chain of Responsibility Design Pattern
+
+#### GoF Definition
+
+> Avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request.  
+> Chain the receiving objects and pass the request along the chain until an object handles it.
+
+#### Intent
+
+- Allow more than one object to have a chance to **handle a request**, helping to avoid tight coupling between the request’s **sender and receiver**.
+- **Chain the receiving objects** together and pass the request down the chain until one of them handles it.
+- Model a **single processing pipeline** with many possible handlers that can start and stop processing a request.
+- Can be viewed as **recursive traversal of an object‑oriented linked list** of handlers.
+
+#### Advantages
+
+- Enhances **loose coupling** between senders and receivers.
+- Makes assigning and reassigning **responsibilities to objects** much more flexible.
+
+#### Uses
+
+- When **two or more objects can handle a request**.
+- When the set of handler objects and their order need to be **specified or changed dynamically**.
+
+#### Visual Representation
+
+**Before applying Chain of Responsibility Pattern:**
+
+![Before Chain of Responsibility Pattern](images/before-chain.png)
+
+**After applying Chain of Responsibility Pattern:**
+
+![After Chain of Responsibility Pattern](images/after-chain.png)
+
+#### Summary
+
+- Chain of Responsibility allows you to **send requests through a chain of handlers**.  
+  Each handler decides whether to **process the request** or **pass it along to the next handler**.
+- Like many behavioral patterns, it extracts specific checks or steps into stand‑alone objects called **handlers**.
+- Each check is moved to its own class with a single method that **performs the check**, taking the request and its data as arguments.
+- A handler can **stop forwarding the request** further down the chain, effectively terminating processing.
+
+#### When to Use the Chain of Responsibility Pattern
+
+- When your software is expected to **process multiple types of requests in various ways**, but the specific types and order of handling **aren’t known in advance**.
+- When **multiple handlers** need to be executed in a particular sequence.
+- When the **set of handlers and their order** are expected to **change at runtime**.
+
+#### Files in This Repo
+
+- **BAD**
+  - [ErrorLogger.java](behavioral/Chain%20of%20Responsibility%20Design%20Pattern/bad/ErrorLogger.java)
+  - [InfoLogger.java](behavioral/Chain%20of%20Responsibility%20Design%20Pattern/bad/InfoLogger.java)
+  - [Levels.java](behavioral/Chain%20of%20Responsibility%20Design%20Pattern/bad/Levels.java)
+  - [Logger.java](behavioral/Chain%20of%20Responsibility%20Design%20Pattern/bad/Logger.java)
+  - [LoggerDemo.java](behavioral/Chain%20of%20Responsibility%20Design%20Pattern/bad/LoggerDemo.java)
+  - [LoggingService.java](behavioral/Chain%20of%20Responsibility%20Design%20Pattern/bad/LoggingService.java)
+  - [WarningLogger.java](behavioral/Chain%20of%20Responsibility%20Design%20Pattern/bad/WarningLogger.java)
+
+- **GOOD**
+  - [ChainDemo.java](behavioral/Chain%20of%20Responsibility%20Design%20Pattern/good/ChainDemo.java)
+  - [ErrorLogger.java](behavioral/Chain%20of%20Responsibility%20Design%20Pattern/good/ErrorLogger.java)
+  - [InfoLogger.java](behavioral/Chain%20of%20Responsibility%20Design%20Pattern/good/InfoLogger.java)
+  - [Logger.java](behavioral/Chain%20of%20Responsibility%20Design%20Pattern/good/Logger.java)
+  - [LoggingService.java](behavioral/Chain%20of%20Responsibility%20Design%20Pattern/good/LoggingService.java)
+  - [WarningLogger.java](behavioral/Chain%20of%20Responsibility%20Design%20Pattern/good/WarningLogger.java)
