@@ -889,3 +889,71 @@ Behavioral design patterns focus on **object communication mechanisms** – how 
   - [NewsService.java](behavioral/Observer%20Design%20Pattern/good/NewsService.java)
   - [Observer.java](behavioral/Observer%20Design%20Pattern/good/Observer.java)
   - [Subject.java](behavioral/Observer%20Design%20Pattern/good/Subject.java)
+
+### Mediator Design Pattern
+
+#### GoF Definition
+
+> Define an object that encapsulates how a set of objects interact.  
+> Mediator promotes loose coupling by keeping objects from referring to each other explicitly,  
+> and lets you vary their interaction independently.
+
+#### Intent
+
+- Define an object (the **Mediator**) that **encapsulates the interaction** of a group of collaborating objects.
+- Promote **loose coupling** by preventing objects from explicitly referencing one another,  
+  and allow their **interaction logic** to vary independently.
+- Introduce an **intermediate component** to decouple a large number of peers.
+- Increase the **“full object status”** of many‑to‑many relationships by centralising coordination in the mediator.
+
+#### Advantages
+
+- Classes become **decoupled** from one another.
+- Interaction **control is centralized** inside the mediator.
+- Communication between objects becomes more **generic and maintainable**.
+- Handling and evolving individual components becomes **easier**.
+
+#### Uses
+
+- Common in **chat‑like applications** or **message‑based systems**.
+- When a group of objects must communicate in a **well‑defined but complex way**.
+
+#### Visual Representation
+
+**Before applying Mediator Pattern:**
+
+![Before Mediator Pattern](images/before-mediator.png)
+
+**After applying Mediator Pattern:**
+
+![After Mediator Pattern](images/after-mediator.png)
+
+#### Summary
+
+- Mediator is a **behavioral design pattern** that reduces the **chaos of object relationships**.  
+  Components stop talking to each other directly and collaborate only through a **Mediator object**.
+- According to the pattern, components that should be independent of one another must work together via a dedicated mediator,  
+  which **routes calls to the appropriate components**. Instead of depending on many peers, components depend only on **one mediator**.
+- A good analogy is **air‑traffic control**: aircraft don’t negotiate with each other directly;  
+  all coordination goes through the **control tower (mediator)**.
+
+#### When to Use the Mediator Pattern
+
+- When it’s hard to change some classes because they’re **tightly coupled** to many others.
+- When a component **cannot easily be reused** in another program because it depends too much on surrounding components.
+- When you find yourself creating **many subclasses of components** to reuse behaviour in different interaction scenarios.
+
+#### Files in This Repo
+
+- **BAD**
+  - [Car.java](behavioral/Mediator%20Design%20Pattern/bad/Car.java)
+  - [Demo.java](behavioral/Mediator%20Design%20Pattern/bad/Demo.java)
+  - [Parking.java](behavioral/Mediator%20Design%20Pattern/bad/Parking.java)
+  - [ParkingLot.java](behavioral/Mediator%20Design%20Pattern/bad/ParkingLot.java)
+
+- **GOOD**
+  - [ChatRoomMediator.java](behavioral/Mediator%20Design%20Pattern/good/ChatRoomMediator.java)
+  - [ChatRoomMediatorImpl.java](behavioral/Mediator%20Design%20Pattern/good/ChatRoomMediatorImpl.java)
+  - [ChatUser.java](behavioral/Mediator%20Design%20Pattern/good/ChatUser.java)
+  - [Demo.java](behavioral/Mediator%20Design%20Pattern/good/Demo.java)
+  - [User.java](behavioral/Mediator%20Design%20Pattern/good/User.java)
