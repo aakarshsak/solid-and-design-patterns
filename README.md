@@ -20,6 +20,7 @@
   - [Decorator Design Pattern](#decorator-design-pattern)
 - [Behavioral Design Patterns](#behavioral-design-patterns)
   - [Chain of Responsibility Design Pattern](#chain-of-responsibility-design-pattern)
+  - [Observer Design Pattern](#observer-design-pattern)
 
 ## Introduction to Design Patterns
 
@@ -825,3 +826,66 @@ Behavioral design patterns focus on **object communication mechanisms** – how 
   - [Logger.java](behavioral/Chain%20of%20Responsibility%20Design%20Pattern/good/Logger.java)
   - [LoggingService.java](behavioral/Chain%20of%20Responsibility%20Design%20Pattern/good/LoggingService.java)
   - [WarningLogger.java](behavioral/Chain%20of%20Responsibility%20Design%20Pattern/good/WarningLogger.java)
+
+### Observer Design Pattern
+
+#### GoF Definition
+
+> Define a one‑to‑many dependency between objects so that when one object changes state,  
+> all its dependents are notified and updated automatically.
+
+#### Intent
+
+- Create a **one‑to‑many relationship** between objects so that when **one object changes state**,  
+  all of its **dependents are automatically notified and updated**.
+- Encapsulate the **core / engine logic** in a **Subject** abstraction, and encapsulate the **variable / optional / UI parts** in an **Observer** hierarchy.
+
+#### Advantages
+
+- Enables **broadcast‑style communication** from a single subject to many observers.
+- Decouples **publishers (subjects)** from **subscribers (observers)** so they can vary independently.
+
+#### Uses
+
+- When a **state change in one object** should be reflected in the state of **other objects**  
+  without creating **tight coupling** between them.
+
+#### Visual Representation
+
+**Before applying Observer Pattern:**
+
+![Before Observer Pattern](images/before-observer.png)
+
+**After applying Observer Pattern:**
+
+![After Observer Pattern](images/after-observer.png)
+
+#### Summary
+
+- Observer is a **behavioral design pattern** that introduces a **subscription mechanism** so that multiple objects can be **notified about events** occurring in the object they observe.
+- The object that notifies others about its state changes is called the **publisher/subject**,  
+  while all objects that track its state are called **subscribers/observers**.
+- The publisher exposes methods to **subscribe and unsubscribe** observers from its event stream.
+
+#### When to Use the Observer Pattern
+
+- When changing the state of one object should result in changes in **other objects**, but the exact set of dependents is **unknown in advance or changes dynamically**.
+- When some objects must **monitor others only for a limited time or under certain conditions**.
+
+#### Files in This Repo
+
+- **BAD**
+  - [ChannelAlpha.java](behavioral/Observer%20Design%20Pattern/bad/ChannelAlpha.java)
+  - [ChannelBeta.java](behavioral/Observer%20Design%20Pattern/bad/ChannelBeta.java)
+  - [ChannelGamma.java](behavioral/Observer%20Design%20Pattern/bad/ChannelGamma.java)
+  - [Demo.java](behavioral/Observer%20Design%20Pattern/bad/Demo.java)
+  - [NewsService.java](behavioral/Observer%20Design%20Pattern/bad/NewsService.java)
+
+- **GOOD**
+  - [ChannelAlpha.java](behavioral/Observer%20Design%20Pattern/good/ChannelAlpha.java)
+  - [ChannelBeta.java](behavioral/Observer%20Design%20Pattern/good/ChannelBeta.java)
+  - [ChannelGamma.java](behavioral/Observer%20Design%20Pattern/good/ChannelGamma.java)
+  - [Demo.java](behavioral/Observer%20Design%20Pattern/good/Demo.java)
+  - [NewsService.java](behavioral/Observer%20Design%20Pattern/good/NewsService.java)
+  - [Observer.java](behavioral/Observer%20Design%20Pattern/good/Observer.java)
+  - [Subject.java](behavioral/Observer%20Design%20Pattern/good/Subject.java)
