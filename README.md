@@ -151,11 +151,11 @@ Creational patterns focus primarily on **object creation mechanisms**, i.e., the
 
 **Before applying Factory Pattern:**
 
-![Before Factory Pattern](images/before-factory.png)
+![Before Factory Pattern](images/design-patterns/before-factory.png)
 
 **After applying Factory Pattern:**
 
-![After Factory Pattern](images/after-factory.png)
+![After Factory Pattern](images/design-patterns/after-factory.png)
 
 #### Summary
 
@@ -222,11 +222,11 @@ Creational patterns focus primarily on **object creation mechanisms**, i.e., the
 
 **Before applying Builder Pattern:**
 
-![Before Builder Pattern](images/before-builder.png)
+![Before Builder Pattern](images/design-patterns/before-builder.png)
 
 **After applying Builder Pattern:**
 
-![After Builder Pattern](images/after-builder.png)
+![After Builder Pattern](images/design-patterns/after-builder.png)
 
 #### Summary
 
@@ -282,11 +282,11 @@ Creational patterns focus primarily on **object creation mechanisms**, i.e., the
 
 **Before applying Prototype Pattern:**
 
-![Before Prototype Pattern](images/before-prototype.png)
+![Before Prototype Pattern](images/design-patterns/before-prototype.png)
 
 **After applying Prototype Pattern:**
 
-![After Prototype Pattern](images/after-prototype.png)
+![After Prototype Pattern](images/design-patterns/after-prototype.png)
 
 #### Summary
 
@@ -352,7 +352,7 @@ More generally, the intent is to:
 
 **After applying Singleton Pattern:**
 
-![After Singleton Pattern](images/after-singleton.png)
+![After Singleton Pattern](images/design-patterns/after-singleton.png)
 
 #### Summary
 
@@ -416,11 +416,11 @@ Structural design patterns focus on the **organisation of classes and objects in
 
 **Before applying Adapter Pattern:**
 
-![Before Adapter Pattern](images/before-adapter.png)
+![Before Adapter Pattern](images/design-patterns/before-adapter.png)
 
 **After applying Adapter Pattern:**
 
-![After Adapter Pattern](images/after-adapter.png)
+![After Adapter Pattern](images/design-patterns/after-adapter.png)
 
 #### Summary
 
@@ -479,11 +479,11 @@ Structural design patterns focus on the **organisation of classes and objects in
 
 **Before applying Bridge Pattern:**
 
-![Before Bridge Pattern](images/before-bridge.png)
+![Before Bridge Pattern](images/design-patterns/before-bridge.png)
 
 **After applying Bridge Pattern:**
 
-![After Bridge Pattern](images/after-bridge.png)
+![After Bridge Pattern](images/design-patterns/after-bridge.png)
 
 #### Summary
 
@@ -550,7 +550,7 @@ Structural design patterns focus on the **organisation of classes and objects in
 
 **After applying Composite Pattern:**
 
-![After Composite Pattern](images/after-composite.png)
+![After Composite Pattern](images/design-patterns/after-composite.png)
 
 #### Summary
 
@@ -604,11 +604,11 @@ Structural design patterns focus on the **organisation of classes and objects in
 
 **Before applying Facade Pattern:**
 
-![Before Facade Pattern](images/before-facade.png)
+![Before Facade Pattern](images/design-patterns/before-facade.png)
 
 **After applying Facade Pattern:**
 
-![After Facade Pattern](images/after-facade.png)
+![After Facade Pattern](images/design-patterns/after-facade.png)
 
 #### Summary
 
@@ -658,11 +658,11 @@ Structural design patterns focus on the **organisation of classes and objects in
 
 **Before applying Proxy Pattern:**
 
-![Before Proxy Pattern](images/before-proxy.png)
+![Before Proxy Pattern](images/design-patterns/before-proxy.png)
 
 **After applying Proxy Pattern:**
 
-![After Proxy Pattern](images/after-proxy.png)
+![After Proxy Pattern](images/design-patterns/after-proxy.png)
 
 #### Summary
 
@@ -716,11 +716,11 @@ Structural design patterns focus on the **organisation of classes and objects in
 
 **Before applying Decorator Pattern:**
 
-![Before Decorator Pattern](images/before-decorator.png)
+![Before Decorator Pattern](images/design-patterns/before-decorator.png)
 
 **After applying Decorator Pattern:**
 
-![After Decorator Pattern](images/after-decorator.png)
+![After Decorator Pattern](images/design-patterns/after-decorator.png)
 
 #### Summary
 
@@ -788,11 +788,11 @@ Behavioral design patterns focus on **object communication mechanisms** – how 
 
 **Before applying Chain of Responsibility Pattern:**
 
-![Before Chain of Responsibility Pattern](images/before-chain.png)
+![Before Chain of Responsibility Pattern](images/design-patterns/before-chain.png)
 
 **After applying Chain of Responsibility Pattern:**
 
-![After Chain of Responsibility Pattern](images/after-chain.png)
+![After Chain of Responsibility Pattern](images/design-patterns/after-chain.png)
 
 #### Summary
 
@@ -854,11 +854,11 @@ Behavioral design patterns focus on **object communication mechanisms** – how 
 
 **Before applying Observer Pattern:**
 
-![Before Observer Pattern](images/before-observer.png)
+![Before Observer Pattern](images/design-patterns/before-observer.png)
 
 **After applying Observer Pattern:**
 
-![After Observer Pattern](images/after-observer.png)
+![After Observer Pattern](images/design-patterns/after-observer.png)
 
 #### Summary
 
@@ -922,11 +922,11 @@ Behavioral design patterns focus on **object communication mechanisms** – how 
 
 **Before applying Mediator Pattern:**
 
-![Before Mediator Pattern](images/before-mediator.png)
+![Before Mediator Pattern](images/design-patterns/before-mediator.png)
 
 **After applying Mediator Pattern:**
 
-![After Mediator Pattern](images/after-mediator.png)
+![After Mediator Pattern](images/design-patterns/after-mediator.png)
 
 #### Summary
 
