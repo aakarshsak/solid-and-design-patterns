@@ -6,6 +6,13 @@
   - [Evolution of Design Patterns](#evolution-of-design-patterns)
   - [Need for Design Patterns](#need-for-design-patterns)
   - [Classification of Design Patterns](#classification-of-design-patterns)
+- [SOLID Design Principles](#solid-design-principles)
+  - [Introduction to Design Principles](#introduction-to-design-principles)
+  - [Single Responsibility Principle (SRP)](#single-responsibility-principle-srp)
+  - [Open/Closed Principle (OCP)](#openclosed-principle-ocp)
+  - [Liskov's Substitution Principle (LSP)](#liskovs-substitution-principle-lsp)
+  - [Interface Segregation Principle (ISP)](#interface-segregation-principle-isp)
+  - [Dependency Inversion Principle (DIP)](#dependency-inversion-principle-dip)
 - [Creational Design Patterns](#creational-design-patterns)
   - [Factory Design Pattern](#factory-design-pattern)
   - [Builder Design Pattern](#builder-design-pattern)
@@ -111,6 +118,244 @@ Design patterns are generally classified into three main categories:
 - Define **how different classes and objects communicate** with each other
 - Concerned with **how responsibilities are shared** amongst different classes
 - Help define and **streamline complex flows of information** between different classes
+ 
+## SOLID Design Principles
+
+Design principles are a **set of guidelines or a toolkit** that help developers write the **best version of their code**.
+
+### Introduction to Design Principles
+
+#### What Are Design Principles?
+
+- Simple **guidelines to follow** to build a **scalable** software system
+- Aim to create **testable, readable, and understandable** code
+- Help in creating code that is **easy to maintain**
+- Enable **multiple developers** to collaborate effectively on the same codebase
+
+### Overview of SOLID
+
+The **SOLID** design principles consist of the following:
+
+- **Single Responsibility Principle (SRP)** – Each class should have **only one responsibility**
+- **Open/Closed Principle (OCP)** – A class should be **open for extension** but **closed for modification**
+- **Liskov's Substitution Principle (LSP)** – **Subclasses should be replaceable** for their base classes
+- **Interface Segregation Principle (ISP)** – Clients **should not be forced to implement functions** they do not use
+- **Dependency Inversion Principle (DIP)** – **Depend on abstractions**, not on concrete implementations
+
+Uncle Bob argued that without a good design, an application can become:
+
+- **Rigid**: Everything feels “set in stone”; changing one thing **always breaks something else**, and it’s hard to see what.
+- **Fragile**: Changes are easy to make, but you never know **what unrelated parts might break**.
+- **Immobile**: Code **cannot be reused** without copying and pasting it into new places.
+- **Viscous**: Every change tends to **break everything**, and although you can patch it back together, the next developer will face the same pain.
+
+#### Need for Design Principles in Software Development
+
+- Create a **common goal** for designing **high‑quality code**
+- Help **extend the lifetime** of a product and make future changes safer
+
+---
+
+### Single Responsibility Principle (SRP)
+
+> A class should have only one responsibility, i.e., it should be responsible for **only a single functionality** or part of a functionality.
+
+#### Key Idea
+
+- **One class, one responsibility**
+- Since a class has only one responsibility, it has **only one reason to change**
+- If a class has multiple responsibilities and one behaviour is modified, there is a higher risk of **introducing bugs** in other behaviours
+
+#### Visual Representation
+
+**Before applying SRP:**
+
+![Before SRP](images/solid/srp-before.png)
+
+**After applying SRP:**
+
+![After SRP](images/solid/srp-after.png)
+
+#### Files in This Repo
+
+- **SRP examples**
+  - [Account.java](solid/SRP/Account.java)
+  - [Customer.java](solid/SRP/Customer.java)
+  - [CustomerMultiResponsibility.java](solid/SRP/CustomerMultiResponsibility.java)
+  - [SRPDemo.java](solid/SRP/SRPDemo.java)
+
+---
+
+### Open/Closed Principle (OCP)
+
+> A class should be **open for extension but closed for modification**.
+
+#### Key Idea
+
+- Classes should be **open for extension** (you can add new behaviour), but **closed for modification** (you shouldn't need to change existing code).
+- New functionality should be added by **extending** existing classes, not by **editing** them.
+- Avoid unnecessary modifications to existing, working code to reduce the chances of introducing **new bugs**.
+
+#### Visual Representation
+
+**Before applying OCP:**
+
+![Before OCP](images/solid/ocp-before.png)
+
+**After applying OCP:**
+
+![After OCP](images/solid/ocp-after.png)
+
+#### Why Is OCP Important?
+
+- Supports **remote extension** – classes often come from **third‑party libraries**, so you should be able to extend them without touching their source.
+- Encourages **loose coupling**
+- Reduces the risk of **regressions** because existing, stable code is not modified
+
+#### Files in This Repo
+
+- **BAD**
+  - [Demo.java](solid/OCP/BAD/Demo.java)
+  - [FoodOrderRAW.java](solid/OCP/BAD/FoodOrderRAW.java)
+  - [MainCourse.java](solid/OCP/BAD/MainCourse.java)
+  - [MenuItem.java](solid/OCP/BAD/MenuItem.java)
+
+- **Good OCP Code**
+  - [Dessert.java](solid/OCP/Good%20OCP%20Code/Dessert.java)
+  - [FoodOrder.java](solid/OCP/Good%20OCP%20Code/FoodOrder.java)
+  - [MainCourse.java](solid/OCP/Good%20OCP%20Code/MainCourse.java)
+  - [MenuItem.java](solid/OCP/Good%20OCP%20Code/MenuItem.java)
+  - [OCPDemo.java](solid/OCP/Good%20OCP%20Code/OCPDemo.java)
+
+---
+
+### Liskov's Substitution Principle (LSP)
+
+> Subtypes must be **substitutable** for their base types.
+
+#### Key Idea
+
+- Subclasses should be able to perform **all the functionalities** of the parent class.
+- If a class `T` inherits from a class `S`, then `T` should be **usable anywhere** `S` is expected **without breaking** existing behaviour.
+- The aim is to enforce **consistency** in polymorphic hierarchies.
+
+#### Visual Representation
+
+**Before applying LSP:**
+
+![Before LSP](images/solid/lsp-before.png)
+
+**After applying LSP:**
+
+![After LSP](images/solid/lsp-after.png)
+
+#### Summary
+
+- LSP states that **subclasses should be substitutable for their base classes**.
+- If `A` is a subtype of `B`, then instances of `B` in a program should be replaceable with instances of `A` **without affecting the program’s correctness**.
+- Bugs often occur when a child class **cannot safely perform** the same behaviours as its parent class.
+
+#### Files in This Repo
+
+- **BAD**
+  - [Animal.java](solid/LSP/BAD/Animal.java)
+  - [AnimalDemo.java](solid/LSP/BAD/AnimalDemo.java)
+  - [Horse.java](solid/LSP/BAD/Horse.java)
+  - [Lion.java](solid/LSP/BAD/Lion.java)
+
+- **Good LSP Codes**
+  - [Animal.java](solid/LSP/Good%20LSP%20Codes/Animal.java)
+  - [AnimalDemo.java](solid/LSP/Good%20LSP%20Codes/AnimalDemo.java)
+  - [Carnivore.java](solid/LSP/Good%20LSP%20Codes/Carnivore.java)
+  - [Herbivore.java](solid/LSP/Good%20LSP%20Codes/Herbivore.java)
+  - [Horse.java](solid/LSP/Good%20LSP%20Codes/Horse.java)
+  - [Lion.java](solid/LSP/Good%20LSP%20Codes/Lion.java)
+
+---
+
+### Interface Segregation Principle (ISP)
+
+> Many **client‑specific interfaces** are better than one **general‑purpose interface**.
+
+#### Key Idea
+
+- Always try to implement **client‑specific interfaces** rather than one large, general‑purpose interface.
+- Clients **should not be forced to implement methods they do not need**.
+- Actions should be **split into smaller sets** so that a class can depend only on the **operations it actually uses**.
+
+#### Visual Representation
+
+**Before applying ISP:**
+
+![Before ISP](images/solid/isp-before.png)
+
+**After applying ISP:**
+
+![After ISP](images/solid/isp-after.png)
+
+#### Summary
+
+- Interfaces should be decomposed into **small, cohesive groups** of related members.
+- When you change a large interface, you must update **every class** that implements it.
+- Smaller, focused interfaces mean that changes affect **fewer classes**, reducing the cost of evolution.
+
+#### Files in This Repo
+
+- **BAD**
+  - [Coffee.java](solid/ISP/BAD/Coffee.java)
+  - [CoffeeDemo.java](solid/ISP/BAD/CoffeeDemo.java)
+  - [Espresso.java](solid/ISP/BAD/Espresso.java)
+  - [Latte.java](solid/ISP/BAD/Latte.java)
+
+- **GOOD ISP Codes**
+  - [Coffee.java](solid/ISP/GOOD%20ISP%20COdes/Coffee.java)
+  - [CoffeeDemo.java](solid/ISP/GOOD%20ISP%20COdes/CoffeeDemo.java)
+  - [Espresso.java](solid/ISP/GOOD%20ISP%20COdes/Espresso.java)
+  - [Latte.java](solid/ISP/GOOD%20ISP%20COdes/Latte.java)
+  - [MilkBased.java](solid/ISP/GOOD%20ISP%20COdes/MilkBased.java)
+
+---
+
+### Dependency Inversion Principle (DIP)
+
+> Depend on **abstractions**, not on concretions.
+
+#### Key Idea
+
+- High‑level modules and low‑level modules should both **depend on abstractions (interfaces/abstract classes)**.
+- A class should not be tightly fused to a specific tool it uses; instead, it should depend on an **interface** that the tool implements.
+- The goal is to **reduce coupling** between classes by introducing **abstraction layers**.
+
+#### Visual Representation
+
+**Before applying DIP:**
+
+![Before DIP](images/solid/dip-before.png)
+
+**After applying DIP:**
+
+![After DIP](images/solid/dip-after.png)
+
+#### Summary
+
+- DIP states: **“Depend upon abstractions. Do not depend upon concretions.”**
+- Neither the high‑level class nor the abstraction needs to know **how the concrete tool works internally**.
+- The tool must **conform to the abstraction’s contract**, but implementation details remain independent.
+
+#### Files in This Repo
+
+- **BAD**
+  - [BotDemo.java](solid/DIP/BAD/BotDemo.java)
+  - [TalkingBot.java](solid/DIP/BAD/TalkingBot.java)
+  - [WalkingBot.java](solid/DIP/BAD/WalkingBot.java)
+
+- **Good DIP Codes**
+  - [Bot.java](solid/DIP/Good%20DIP%20Codes/Bot.java)
+  - [BotDemo.java](solid/DIP/Good%20DIP%20Codes/BotDemo.java)
+  - [TalkingBot.java](solid/DIP/Good%20DIP%20Codes/TalkingBot.java)
+  - [WalkingBot.java](solid/DIP/Good%20DIP%20Codes/WalkingBot.java)
+
+---
 
 ## Creational Design Patterns
 
