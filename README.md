@@ -1,11 +1,5 @@
 ### Contents
 
-- [Introduction to Design Patterns](#introduction-to-design-patterns)
-  - [A Simple Scenario](#a-simple-scenario)
-  - [What Are Design Patterns?](#what-are-design-patterns)
-  - [Evolution of Design Patterns](#evolution-of-design-patterns)
-  - [Need for Design Patterns](#need-for-design-patterns)
-  - [Classification of Design Patterns](#classification-of-design-patterns)
 - [SOLID Design Principles](#solid-design-principles)
   - [Introduction to Design Principles](#introduction-to-design-principles)
   - [Single Responsibility Principle (SRP)](#single-responsibility-principle-srp)
@@ -13,6 +7,12 @@
   - [Liskov's Substitution Principle (LSP)](#liskovs-substitution-principle-lsp)
   - [Interface Segregation Principle (ISP)](#interface-segregation-principle-isp)
   - [Dependency Inversion Principle (DIP)](#dependency-inversion-principle-dip)
+- [Introduction to Design Patterns](#introduction-to-design-patterns)
+  - [A Simple Scenario](#a-simple-scenario)
+  - [What Are Design Patterns?](#what-are-design-patterns)
+  - [Evolution of Design Patterns](#evolution-of-design-patterns)
+  - [Need for Design Patterns](#need-for-design-patterns)
+  - [Classification of Design Patterns](#classification-of-design-patterns)
 - [Creational Design Patterns](#creational-design-patterns)
   - [Factory Design Pattern](#factory-design-pattern)
   - [Builder Design Pattern](#builder-design-pattern)
@@ -29,96 +29,6 @@
   - [Chain of Responsibility Design Pattern](#chain-of-responsibility-design-pattern)
   - [Observer Design Pattern](#observer-design-pattern)
 
-## Introduction to Design Patterns
-
-In short, **design patterns are conventional answers to common software design issues**.  
-Each pattern is similar to a **blueprint** that you can alter to tackle a specific design problem in your code.
-
-### A Simple Scenario
-
-#### Identifying the Genre of a Book
-
-- **Question**: How will you build a system that can identify the genre of a book?  
-  **Answer**: Input the book to the system code and let the code give the genre of the book as output.  
-  A naive way is to have simple `if/else` statements that directly return the genre.
-
-- **Question**: What do you think is the problem with the above approach?  
-  **Answer**:
-  - It creates a **monolithic structure**
-  - **Reuse** of parts becomes difficult
-  - **Maintenance** of code becomes very complex
-
-#### Better Approach
-
-Have **multiple handlers**, each used for handling only one type of book:
-
-- One handler checks: *Is it a thriller?*  
-  - If yes, it returns the genre  
-  - If not, it passes the request to the next handler
-- The next handler checks for another genre, and so on.
-
-- **Learning**: This approach is basically the **Chain of Responsibility pattern**.
-
-- **Advantages of this pattern**:
-  - **Simple structure**
-  - **Easily reusable**
-  - **Easy to maintain**
-
-### What Are Design Patterns?
-
-- **Generic solution** to a problem that occurs repeatedly in software development
-- **Not actual code**
-- A design pattern is a **template or description** of how to solve a problem
-- Can be thought of as **best practices** to follow while designing to avoid problems
-
-### Evolution of Design Patterns
-
-- **Architecture**:  
-  Earliest implementation of patterns was introduced in architecture.  
-  Later, the idea of patterns in building things was introduced in code as well.
-
-- **Gang of Four (GoF)**:  
-  In 1994, the Gang of Four introduced software design patterns. This group included:
-  - Erich Gamma
-  - Richard Helm
-  - Ralph Johnson
-  - John Vlissides
-
-### Need for Design Patterns
-
-- **Avoid repeating the same mistakes** over and over again
-- **Build a common terminology** that everyone can understand
-- **Save time** by trying to avoid rework after development is completed
-- Provide a **solution independent of any specific code or programming language**
-- Provide a **verified, proven solution** to solve software issues
-- Make the system **easier to understand and maintain**
-
-### Classification of Design Patterns
-
-Design patterns are generally classified into three main categories:
-
-#### Creational Design Patterns
-
-- Define **how classes and objects will be created**
-- Different classes of objects can follow different **mechanisms for creating objects**
-- **Hide the actual implementation** of classes from their usage
-- Useful when the user **does not care about the implementation**, only about the **final created product**
-
-#### Structural Design Patterns
-
-- Define the **relationships between different classes**
-- Concerned with **how different classes and subclasses are organised** amongst each other
-- Describe **how classes and objects are composed** to form larger objects and structures
-- **Difference from creational patterns**:
-  - Creational patterns focus on **how objects are created**
-  - Structural patterns focus on **how objects are related and composed**
-
-#### Behavioral Design Patterns
-
-- Define **how different classes and objects communicate** with each other
-- Concerned with **how responsibilities are shared** amongst different classes
-- Help define and **streamline complex flows of information** between different classes
- 
 ## SOLID Design Principles
 
 Design principles are a **set of guidelines or a toolkit** that help developers write the **best version of their code**.
@@ -356,6 +266,96 @@ Uncle Bob argued that without a good design, an application can become:
   - [WalkingBot.java](solid/DIP/Good%20DIP%20Codes/WalkingBot.java)
 
 ---
+
+## Introduction to Design Patterns
+
+In short, **design patterns are conventional answers to common software design issues**.  
+Each pattern is similar to a **blueprint** that you can alter to tackle a specific design problem in your code.
+
+### A Simple Scenario
+
+#### Identifying the Genre of a Book
+
+- **Question**: How will you build a system that can identify the genre of a book?  
+  **Answer**: Input the book to the system code and let the code give the genre of the book as output.  
+  A naive way is to have simple `if/else` statements that directly return the genre.
+
+- **Question**: What do you think is the problem with the above approach?  
+  **Answer**:
+  - It creates a **monolithic structure**
+  - **Reuse** of parts becomes difficult
+  - **Maintenance** of code becomes very complex
+
+#### Better Approach
+
+Have **multiple handlers**, each used for handling only one type of book:
+
+- One handler checks: *Is it a thriller?*  
+  - If yes, it returns the genre  
+  - If not, it passes the request to the next handler
+- The next handler checks for another genre, and so on.
+
+- **Learning**: This approach is basically the **Chain of Responsibility pattern**.
+
+- **Advantages of this pattern**:
+  - **Simple structure**
+  - **Easily reusable**
+  - **Easy to maintain**
+
+### What Are Design Patterns?
+
+- **Generic solution** to a problem that occurs repeatedly in software development
+- **Not actual code**
+- A design pattern is a **template or description** of how to solve a problem
+- Can be thought of as **best practices** to follow while designing to avoid problems
+
+### Evolution of Design Patterns
+
+- **Architecture**:  
+  Earliest implementation of patterns was introduced in architecture.  
+  Later, the idea of patterns in building things was introduced in code as well.
+
+- **Gang of Four (GoF)**:  
+  In 1994, the Gang of Four introduced software design patterns. This group included:
+  - Erich Gamma
+  - Richard Helm
+  - Ralph Johnson
+  - John Vlissides
+
+### Need for Design Patterns
+
+- **Avoid repeating the same mistakes** over and over again
+- **Build a common terminology** that everyone can understand
+- **Save time** by trying to avoid rework after development is completed
+- Provide a **solution independent of any specific code or programming language**
+- Provide a **verified, proven solution** to solve software issues
+- Make the system **easier to understand and maintain**
+
+### Classification of Design Patterns
+
+Design patterns are generally classified into three main categories:
+
+#### Creational Design Patterns
+
+- Define **how classes and objects will be created**
+- Different classes of objects can follow different **mechanisms for creating objects**
+- **Hide the actual implementation** of classes from their usage
+- Useful when the user **does not care about the implementation**, only about the **final created product**
+
+#### Structural Design Patterns
+
+- Define the **relationships between different classes**
+- Concerned with **how different classes and subclasses are organised** amongst each other
+- Describe **how classes and objects are composed** to form larger objects and structures
+- **Difference from creational patterns**:
+  - Creational patterns focus on **how objects are created**
+  - Structural patterns focus on **how objects are related and composed**
+
+#### Behavioral Design Patterns
+
+- Define **how different classes and objects communicate** with each other
+- Concerned with **how responsibilities are shared** amongst different classes
+- Help define and **streamline complex flows of information** between different classes
 
 ## Creational Design Patterns
 
